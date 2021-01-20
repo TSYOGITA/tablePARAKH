@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    />
+    <style>
+      .bles {
+        background-color: paleturquoise;
+        border: black solid 5px;
+        font-size: 20px;
+        font-weight: normal;
+        text-align: center;
+        margin: auto 0;
+      }
+      #table {
+        padding: 20px;
+        background-color: darkorange;
+      }
+    </style>
+    <script>
+      function sum() {
+        var txtFirst = document.getElementById("txt1").value;
+        var txtSecond = document.getElementById("txt2").value;
+        var result = parseInt(txtFirst) + parseInt(txtSecond);
+        if (!isNaN(result)) {
+          document.getElementById("txt3").value = result;
+        }
+      }
+
+      function sum() {
+        var txtFirst = document.getElementById("txt4").value;
+        var txtSecond = document.getElementById("txt5").value;
+        var result = parseInt(txtFirst) + parseInt(txtSecond);
+        if (!isNaN(result)) {
+          document.getElementById("txt6").value = result;
+        }
+      }
+
+      function deleteRow(row) {
+        var i = row.parentNode.parentNode.rowIndex;
+        document.getElementById("table").deleteRow(i);
+      }
+
+      function addRow() {
+        var taab = document.getElementById("table");
+        var row = taab.insertRow(-1);
+        row.insertCell(0).textContent = " New row ";
+        row.insertCell(1).textContent = " ";
+        row.insertCell(2).textContent = " ";
+        row.insertCell(3).textContent = " ";
+        row.insertCell(4).textContent = " ";
+      }
+    </script>
+  </head>
+  <body class="bles">
+    <h1>TABLE</h1>
+    <table border="1" width="100%" id="table">
+      <tr>
+        <td>S.N.</td>
+        <td>Col1</td>
+        <td>Col2</td>
+        <td>Col1+Col2</td>
+        <td>
+          <input type="button" id="add" value="+" onclick="addRow()" /><input
+            type="button"
+            id="remove"
+            value="-"
+            onclick="deleteRow(this)"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>1</td>
+        <td><input type="text" id="txt1" onkeyup="sum();" /></td>
+        <td><input type="text" id="txt2" onkeyup="sum();" /></td>
+        <td><input type="text" id="txt3" /></td>
+        <td>
+          <input type="button" id="add" value="+" onclick="addRow()" /><input
+            type="button"
+            id="remove"
+            value="-"
+            onclick="deleteRow(this)"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>2</td>
+        <td><input type="text" id="txt4" onkeyup="sum();" /></td>
+        <td><input type="text" id="txt5" onkeyup="sum();" /></td>
+        <td><input type="text" id="txt6" /></td>
+        <td>
+          <input type="button" id="add" value="+" onclick="addRow()" /><input
+            type="button"
+            id="remove"
+            value="-"
+            onclick="deleteRow(this)"
+          />
+        </td>
+      </tr>
+      <tr>
+        <td>3</td>
+        <td><input type="text" /></td>
+        <td><input type="text" /></td>
+        <td></td>
+        <td>
+          <input type="button" id="add" value="+" onclick="addRow()" /><input
+            type="button"
+            id="remove"
+            value="-"
+            onclick="deleteRow(this)"
+          />
+        </td>
+      </tr>
+    </table>
+  </body>
+  <script src="PRJ.js"></script>
+</html>
